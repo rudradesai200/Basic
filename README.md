@@ -6,6 +6,7 @@ A setup package for Django-Python framework . Currently, only python3 and Django
 ```
 git clone <address>
 cd basic/
+chmod +x setup.sh
 ./setup.sh
 source ~/.bashrc
 ```
