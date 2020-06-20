@@ -1,5 +1,4 @@
 #!/bin/bash
-
 if [ $1 == "project" ]
 then
     PROJECTNAME=$2
@@ -14,7 +13,7 @@ then
     # Set up secret folder
     mkdir $PROJECTNAME/secret/
     touch $PROJECTNAME/secret/__init__.py
-    cp $BASIC_DIR/basic/adders/addsettings.py $PROJECTNAME/secret/
+    cp $BASIC_DIR/adders/addsettings.py $PROJECTNAME/secret/
     echo "Created a folder named secret to keep sensitive data"
 
     # Set up other directories
@@ -23,11 +22,11 @@ then
     echo "Setup other required directories"
 
     # Sets up settings.py for secret folder
-    $BASIC_DIR/basic/scripts/settings_setup.sh $PROJECTNAME
+    $BASIC_DIR/scripts/settings_setup.sh $PROJECTNAME
     echo "Setup secret folder used and transfered variables"
 
     # Adding gitignore to the folder
-    cp $BASIC_DIR/basic/adders/.gitignore $PROJECTNAME/
+    cp $BASIC_DIR/adders/.gitignore $PROJECTNAME/
     echo "Adding gitignore to the folder path"
     
     # Migrating changes to db
@@ -49,13 +48,13 @@ else
 
 		# Sets up remaining files in the app
 		touch $APPNAME/forms.py
-		cp $BASIC_DIR/basic/adders/urls.py $APPNAME/
+		cp $BASIC_DIR/adders/urls.py $APPNAME/
         sed -i -e ':a' -e 'N' -e '$!ba' -e "s/|APPNAME|/$APPNAME/g" $APPNAME/urls.py
         echo "Created other required files"
 
 		# Sets up templates and templates tags
 		mkdir $APPNAME/templates
-		cp $BASIC_DIR/basic/templates/* $APPNAME/templates/ -r
+		cp $BASIC_DIR/templates/* $APPNAME/templates/ -r
 		mkdir $APPNAME/templatetags/
 		touch $APPNAME/templatetags/__init__.py
 		sed -i "s/|APPNAME|/$APPNAME/g" $APPNAME/templates/base.html
@@ -74,7 +73,7 @@ else
 		mkdir static/$APPNAME/css
 		mkdir static/$APPNAME/js
 		mkdir static/$APPNAME/images
-		cp $BASIC_DIR/basic/assets/* static/$APPNAME/ -r
+		cp $BASIC_DIR/assets/* static/$APPNAME/ -r
         echo "Set up static and media folders"
 
 		# Adding app name to INSTALLED_APPS

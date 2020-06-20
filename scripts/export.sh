@@ -1,1 +1,0 @@
-export BASIC_DIR="$1"
