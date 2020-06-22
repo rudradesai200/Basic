@@ -4,7 +4,13 @@ if [ $1 == "project" ]
 then
     PROJECTNAME=$2
 	$DJANGOADMIN startproject $PROJECTNAME
-	echo "A new Django Project created with name $PROJECTNAME"
+    if [ $? -eq 0 ]; then
+        echo "A new Django Project created with name $PROJECTNAME"
+    else
+        echo "Django Admin installation issues found"
+        echo "Please check your installation"
+        exit 3
+    fi
 
     # Set up settings.py in project folder
     echo "if settings.DEBUG:" >> $PROJECTNAME/urls.py
@@ -45,7 +51,12 @@ else
         PROJECTNAME=$(echo $PROJECTDIR | cut -d'/' -f 2)
 
 		$BASICPYTHONPATH manage.py startapp $APPNAME
-		echo "A new app with name $APPNAME created"
+        if [ $? -eq 0 ]; then
+            echo "A new app with name $APPNAME created"
+        else
+            echo "Manage.py file not found"
+            echo "Please run this command from your django project directory"
+        fi
 
 		# Sets up remaining files in the app
 		touch $APPNAME/forms.py
