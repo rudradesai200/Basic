@@ -18,6 +18,7 @@ basic project <projectname> # it will create a django project with name <project
 cd <projectname>
 basic app <appname> # it will create an app with the name <appname>
 ```
+
 ##### Examples
 ```
 basic project newproject
@@ -29,5 +30,10 @@ cd newproject
 basic app first
 ```
 ![app_setup](https://user-images.githubusercontent.com/44108388/85259979-944ed380-b487-11ea-94b8-e4d05d83bbb9.png)
+
+```
+python3 manage.py runserver
+```
+![website](https://user-images.githubusercontent.com/44108388/85263979-9fa4fd80-b48d-11ea-86de-13e3b819694e.png)
 
 That's it, a complete django project will be setup. It includes app and other settings too. Please explore the files created to know more.
