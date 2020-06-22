@@ -31,6 +31,7 @@ else
         check=$(which pip)
     else
         check=$(which pip3)
+    fi
     echo -n "Enter you Pip3 Path ($check) : " && read pippath
     if [ -z "$pippath" ]
     then
