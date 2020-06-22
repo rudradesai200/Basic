@@ -13,6 +13,7 @@ chmod +x setup.sh
 source ~/.bashrc
 ```
 ##### USE
+Go to your Desktop or other directory except the installation one.
 ```
 basic project <projectname> # it will create a django project with name <projectname>
 cd <projectname>
