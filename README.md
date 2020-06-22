@@ -5,7 +5,7 @@ A advanced package for complete setup of Django-Python framework. Most of the fe
 ##### Setup
 ```
 git clone https://github.com/rudradesai200/Basic.git
-cd basic/
+cd Basic/
 chmod +x setup.sh
 ./setup.sh
 source ~/.bashrc
