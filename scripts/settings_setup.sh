@@ -13,7 +13,7 @@ sed -i -e ':a' -e 'N' -e '$!ba' -e "s/DATABASES\([^\n]*\n\)\{6\}/DATABASES = add
 sed -i 's/import os/import os\nfrom secret import addsettings /g' $PROJECTNAME/$PROJECTNAME/settings.py
 
 # Add static url and media urls and other settings
-cat ~/basic/adders/settings_adders.txt >> $PROJECTNAME/$PROJECTNAME/settings.py
+cat $BASIC_DIR/adders/settings_adders.txt >> $PROJECTNAME/$PROJECTNAME/settings.py
 
 # Extracting Key from settings.py
 SECRET_KEY=$(grep -o "SECRET_KEY = '.*'" $PROJECTNAME/$PROJECTNAME/settings.py)
