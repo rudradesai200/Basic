@@ -4,16 +4,16 @@ A advanced package for complete setup of Django-Python framework. Most of the fe
 ## GET STARTED
 ##### Setup
 ```
-git clone <address>
+git clone https://github.com/rudradesai200/Basic.git
 cd basic/
 chmod +x setup.sh
 ./setup.sh
 source ~/.bashrc
 ```
-#### USE
+##### USE
 ```
 basic project <projectname> # it will create a django project with name <projectname>
 cd <projectname>
 basic app <appname> # it will create an app with the name <appname>
 ```
-That's it, a complete django server will be setup. Including app and other settings. Please explore the files created to know more.
+That's it, a complete django project will be setup. It includes app and other settings too. Please explore the files created to know more.
