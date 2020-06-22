@@ -1,8 +1,9 @@
 #!/bin/bash
+DJANGOADMIN=$(which django-admin)
 if [ $1 == "project" ]
 then
     PROJECTNAME=$2
-	django-admin startproject $PROJECTNAME
+	$DJANGOADMIN startproject $PROJECTNAME
 	echo "A new Django Project created with name $PROJECTNAME"
 
     # Set up settings.py in project folder
@@ -30,8 +31,8 @@ then
     echo "Adding gitignore to the folder path"
     
     # Migrating changes to db
-    python3 $PROJECTNAME/manage.py makemigrations
-    python3 $PROJECTNAME/manage.py migrate
+    $BASICPYTHONPATH $PROJECTNAME/manage.py makemigrations
+    $BASICPYTHONPATH $PROJECTNAME/manage.py migrate
     echo "Changes migrated"
 
 	echo "Project Setup complete"
@@ -43,7 +44,7 @@ else
         PROJECTDIR=$(find . -name "settings.py" )
         PROJECTNAME=$(echo $PROJECTDIR | cut -d'/' -f 2)
 
-		python3 manage.py startapp $APPNAME
+		$BASICPYTHONPATH manage.py startapp $APPNAME
 		echo "A new app with name $APPNAME created"
 
 		# Sets up remaining files in the app
