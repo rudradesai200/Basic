@@ -1,8 +1,8 @@
 # BASIC : An advanced autmated environment setup for Django.
 An advanced package for the complete setup of the Django-Python framework. Installation of most of the features is covered like template tags, Django-admin custom commands, include and templating in Django. Just install this package, use the setup script for setup and then use it to have a preconfigured advanced Django project with only one command. 
 
-Also, add as many apps you want, with no additional configuration to be done. Everything like adding URLs, including that app to INCLUDED_APPS, setting up the basic index page, and many more, is done automatically. Currently, only Python==3 and Django>=2.2 are supported. Please look at the examples below to start.
-
+Also, add as many apps you want, with no additional configuration to be done. Everything like adding URLs, including that app to INCLUDED_APPS, setting up the basic index page, and many more, is done automatically. Please look at the examples below to start.
+### NOTE:  Currently, It can be run on Linux machines only. And only Python==3 and Django>=2.2 are supported
 ## GET STARTED
 ##### Setup
 ```
