@@ -27,15 +27,26 @@ if which django-admin &> /dev/null; then
 else
     echo 'django-admin not found'
     echo 'Installing Django'
-    echo -n "Enter you Pip3 Path ($(which pip3)) : " && read pippath
+    if which pip3 &> /dev/null then
+        check=$(which pip)
+    else
+        check=$(which pip3)
+    echo -n "Enter you Pip3 Path ($check) : " && read pippath
     if [ -z "$pippath" ]
     then
-        BASICPIPPATH=$(which pip3)
+        BASICPIPPATH=$check
     else
         BASICPIPPATH=$pippath
     fi
     echo "sudo $BASICPIPPATH install Django"
     sudo -m $BASICPIPPATH install Django
+    if [ $? -eq 0 ]; then
+        echo "Successfully Installed Django"
+    else
+        echo "Please manually install Django"
+        echo "And run this script again"
+        exit 4
+    fi
 fi
 
 echo "Checking for django version"

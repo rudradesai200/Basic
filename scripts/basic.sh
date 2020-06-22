@@ -56,6 +56,7 @@ else
         else
             echo "Manage.py file not found"
             echo "Please run this command from your django project directory"
+            exit 5
         fi
 
 		# Sets up remaining files in the app
