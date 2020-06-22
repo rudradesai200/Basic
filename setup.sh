@@ -27,7 +27,7 @@ if which django-admin &> /dev/null; then
 else
     echo 'django-admin not found'
     echo 'Installing Django'
-    if which pip3 &> /dev/null then
+    if [ which pip3 &> /dev/null ] ; then
         check=$(which pip)
     else
         check=$(which pip3)
@@ -39,8 +39,8 @@ else
     else
         BASICPIPPATH=$pippath
     fi
-    echo "sudo $BASICPIPPATH install Django"
-    sudo -m $BASICPIPPATH install Django
+    echo "$BASICPIPPATH install Django --no-cache-dir"
+    $BASICPIPPATH install Django --no-cache-dir
     if [ $? -eq 0 ]; then
         echo "Successfully Installed Django"
     else
