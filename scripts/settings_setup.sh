@@ -5,7 +5,7 @@ APPNAME=$2
 # remove debug=True and allowed host
 sed -i 's/DEBUG.*/DEBUG = addsettings.DEBUG /g' $PROJECTNAME/$PROJECTNAME/settings.py
 sed -i 's/ALLOWED_HOSTS.*/ALLOWED_HOSTS = addsettings.ALLOWED_HOSTS /g' $PROJECTNAME/$PROJECTNAME/settings.py
-
+echo "if settings.DEBUG:"
 # Change databases in settings
 sed -i -e ':a' -e 'N' -e '$!ba' -e "s/DATABASES\([^\n]*\n\)\{6\}/DATABASES = addsettings.DATABASES /g" $PROJECTNAME/$PROJECTNAME/settings.py
 
