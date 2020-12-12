@@ -1,9 +1,9 @@
-# BASIC : A basic automated setup tool for the Django-Python Framework.
-A complete package for the advanced setup of the Django-Python framework. Installation of most of the features is covered like template tags, Django-admin custom commands, include and templating in Django. Just install this package, use the setup script for setup and then use it to have a preconfigured advanced Django project with just a few commands. 
+# BASIC : An automated tool for hassle-free Django project setup
+'Basic' is a complete package for the advanced setup of the Django-Python framework. Setup of most of the features including and not limited to template tags, Django-admin custom commands, include and templating in Django are covered. Just install this package, run the setup script, and then use it to have your own preconfigured advanced Django project with just a few commands. 
 
-Also, add as many apps you want, with no additional configuration to be done. Everything like adding URLs, including that app to INCLUDED_APPS, setting up the basic index page, and many more, is done automatically. Please look at the examples below to start.
+Also, add as many apps you want, with no additional configuration to be done. Everything like adding URLs, including that app to INCLUDED_APPS, setting up the basic index page, and many more, is done automatically. Please look at the examples below to get started.
 
-A complete authentication system can be setup with just one command. Login, Logout & Register are currently supported, but can be extended to many more.
+A complete authentication system can be set up with just one command. Login, Logout & Register functionalities are already supported and can be extended to many more.
 
 ### NOTE:  It can be run on any Linux machine with Python>=3 and Django>=2.2.
 ## GET STARTED
