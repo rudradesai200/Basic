@@ -109,7 +109,7 @@ else
 
         #Set up views.py in app's folder
         echo "def index(request):" >> $APPNAME/views.py
-        echo "  return render(request,\"index.html\")" >> $APPNAME/views.py
+        echo "  return render(request,\"$APPNAME/index.html\")" >> $APPNAME/views.py
         echo -e "Set up views.py ... ${GREEN}${bold}OK${normal}${NC}"
 
         echo -e "App setup done ... ${GREEN}${bold}OK${normal}${NC}"
