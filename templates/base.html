@@ -20,16 +20,16 @@
 
 <body>
     <!-- Sets up Django inbuilt messaging handler -->
-    {% include 'includes/messaging.html' %}
+    {% include '|APPNAME|/includes/messaging.html' %}
 
     <!-- Includes Navbar  -->
-    {% include 'includes/navbar.html' %}
+    {% include '|APPNAME|/includes/navbar.html' %}
     
     <!-- Main body -->
     {% block content %}{% endblock %}
 
     <!-- Includes Footer  -->
-    {% include 'includes/footer.html' %}
+    {% include '|APPNAME|/includes/footer.html' %}
 
     <!-- Common scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
