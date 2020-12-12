@@ -1,0 +1,29 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+
+<!-- Sets the title of the page -->
+{% block title %}Login{% endblock %}
+
+<!-- Additional scripts needed per page -->
+{% block links %} {% endblock %}
+
+<!-- Main body -->
+{% block content %}
+
+<div class="container">
+  <div class="col">
+  {% if user.is_authenticated %}
+    <h4>Hi {{ user.username }}!</h4>
+    <p><a href="{% url 'accounts_logout' %}">Log Out</a></p>
+  {% else %}
+    <p>You are not logged in</p>
+    <a href="{% url 'accounts_login' %}">Log In</a>
+  {% endif %}
+  </div>
+</div>
+
+<!--/.Carousel Wrapper-->
+{% endblock %}
+
+<!-- Extra page dependent scripts -->
+{% block scripts %} {% endblock %}

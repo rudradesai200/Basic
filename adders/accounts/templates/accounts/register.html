@@ -1,0 +1,28 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+
+<!-- Sets the title of the page -->
+{% block title %}Register{% endblock %}
+
+<!-- Additional scripts needed per page -->
+{% block links %}{% endblock %}
+
+<!-- Main body -->
+{% block content %}
+    
+<div class="container">
+  <div class="col">
+    <h2>Register</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Register</button>
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}
+
+<!-- Extra page dependent scripts -->
+{% block scripts %}{% endblock %}
