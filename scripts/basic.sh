@@ -20,8 +20,8 @@ then
     fi
 
     # Set up settings.py in project folder
-    echo "if settings.DEBUG:" >> $PROJECTNAME/urls.py
-    echo "  urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)" >> $PROJECTNAME/urls.py
+    echo "if settings.DEBUG:" >> $PROJECTNAME/$PROJECTNAME/urls.py
+    echo "  urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)" >> $PROJECTNAME/$PROJECTNAME/urls.py
     echo -e "Set up media and static roots in urls ... ${GREEN}${bold}OK${normal}${NC}"
 
     # Set up secret folder
@@ -91,12 +91,14 @@ else
         echo -e "Set up management for manual manage.py commands ... ${GREEN}${bold}OK${normal}${NC}"
 
 		# Sets up assets and upload folders
-		mkdir static/$APPNAME
-		mkdir media/$APPNAME
-		mkdir static/$APPNAME/css
-		mkdir static/$APPNAME/js
-		mkdir static/$APPNAME/images
-		cp $BASIC_DIR/assets/* static/$APPNAME/ -r
+        mkdir $APPNAME/static/
+        mkdir $APPNAME/media/
+		mkdir $APPNAME/static/$APPNAME
+		mkdir $APPNAME/media/$APPNAME
+		mkdir $APPNAME/static/$APPNAME/css
+		mkdir $APPNAME/static/$APPNAME/js
+		mkdir $APPNAME/static/$APPNAME/images
+		cp $BASIC_DIR/assets/* $APPNAME/static/$APPNAME/ -r
         echo -e "Set up static and media folders ... ${GREEN}${bold}OK${normal}${NC}"
 
 		# Adding app name to INSTALLED_APPS
@@ -130,11 +132,13 @@ else
             fi
 
             # Sets up assets and upload folders
-            mkdir static/$APPNAME
-            mkdir media/$APPNAME
-            mkdir static/$APPNAME/css
-            mkdir static/$APPNAME/js
-            mkdir static/$APPNAME/images
+            mkdir $APPNAME/static/
+            mkdir $APPNAME/media/
+            mkdir $APPNAME/static/$APPNAME
+            mkdir $APPNAME/media/$APPNAME
+            mkdir $APPNAME/static/$APPNAME/css
+            mkdir $APPNAME/static/$APPNAME/js
+            mkdir $APPNAME/static/$APPNAME/images
             cp $BASIC_DIR/assets/* static/$APPNAME/ -r
             echo -e "Set up static and media folders ... ${GREEN}${bold}OK${normal}${NC}"
 
