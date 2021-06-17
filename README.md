@@ -52,7 +52,7 @@ python3 manage.py runserver
 ![website](https://user-images.githubusercontent.com/44108388/85263979-9fa4fd80-b48d-11ea-86de-13e3b819694e.png)
 
 ```
-basic authenticate
+basic auth
 ```
 ![website](https://user-images.githubusercontent.com/44108388/101983345-9197a300-3ca0-11eb-8dc4-2fcc0f471548.png)
 
