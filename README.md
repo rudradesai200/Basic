@@ -12,9 +12,17 @@ A complete authentication system can be set up with just one command. Login, Log
 git clone https://github.com/rudradesai200/Basic.git
 cd Basic/
 chmod +x setup.sh
+chmod +x uninstall.sh
 ./setup.sh
-source ~/.bashrc
+source ~/.bashrc # OR other default shell
 ```
+
+##### Uninstall
+```
+$BASIC_DIR/uninstall.sh
+# Restart the terminal to remove the alias and env variables
+```
+
 ##### USE
 Go to your Desktop or other directory except the installation one.
 ```
