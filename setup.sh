@@ -2,7 +2,20 @@
 
 GREEN='\033[0;32m'
 RED='\033[0;101m'
-NC='\033[0m' # No Color
+NC='\033[0m'
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo -n "Enter your default shell ($SHELL) : " && read shell
+if [ -z "$shell" ]
+then
+    SHELL=$SHELL
+else
+    SHELL=$shell
+fi
+
+SHELLRC=~/.$(echo $SHELL | grep -Po '(?<=/usr/bin/)(.+)')rc
+echo "SHELLRC: $SHELLRC"
 
 echo -n "Enter you Python3 Path ($(which python3)) : " && read pythonpath
 if [ -z "$pythonpath" ]
@@ -12,8 +25,10 @@ else
 	BASICPYTHONPATH=$pythonpath
 fi
 echo "PYTHONPATH: $BASICPYTHONPATH"
-echo "# BASIC app path variables " >> ~/.bashrc
-echo "export BASICPYTHONPATH=\"$BASICPYTHONPATH\"" >> ~/.bashrc
+
+echo "" >> $SHELLRC
+echo "### BASIC app path variables ###" >> $SHELLRC
+echo "export BASICPYTHONPATH=\"$BASICPYTHONPATH\" ### BASIC ###" >> $SHELLRC
 
 echo "Checking python version"
 version=$($BASICPYTHONPATH -V 2>&1 | grep -Po '(?<=Python )(.+)')
@@ -68,9 +83,14 @@ else
 fi
 
 BASIC_DIR=$(pwd)
-echo "export BASIC_DIR=\"$BASIC_DIR\"" >> ~/.bashrc
+echo "export BASIC_DIR=\"$BASIC_DIR\" ### BASIC ###" >> $SHELLRC
 
 chmod +x $BASIC_DIR/scripts/basic.sh
 chmod +x $BASIC_DIR/scripts/settings_setup.sh
 
-echo "alias basic=\"$BASIC_DIR/scripts/basic.sh\"" >> ~/.bashrc
+echo "alias basic=\"$BASIC_DIR/scripts/basic.sh\" ### BASIC ###" >> $SHELLRC
+
+echo "### BASIC app path variables end ###" >> $SHELLRC
+echo "" >> $SHELLRC
+
+rm -f '='
