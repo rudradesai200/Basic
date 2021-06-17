@@ -85,8 +85,7 @@ fi
 BASIC_DIR=$(pwd)
 echo "export BASIC_DIR=\"$BASIC_DIR\" ### BASIC ###" >> $SHELLRC
 
-chmod +x $BASIC_DIR/scripts/basic.sh
-chmod +x $BASIC_DIR/scripts/settings_setup.sh
+chmod +x $BASIC_DIR/scripts/*.sh
 
 echo "alias basic=\"$BASIC_DIR/scripts/basic.sh\" ### BASIC ###" >> $SHELLRC
 
