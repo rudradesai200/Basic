@@ -116,7 +116,7 @@ else
 
         echo -e "App setup done ... ${GREEN}${bold}OK${normal}${NC}"
     else
-        if [ $1 == "authenticate" ]
+        if [ $1 == "auth" ]
         then
             APPNAME="accounts"
             PROJECTDIR=$(find . -name "settings.py" )
@@ -157,6 +157,15 @@ else
             echo -e "Add urls for $APPNAME to project's urls.py ... ${GREEN}${bold}OK${normal}${NC}"
 
             echo -e "App setup done ... ${GREEN}${bold}OK${normal}${NC}"
+        else
+            if [ $1 == "uninstall" ]
+            then
+                $BASIC_DIR/uninstall.sh
+            else
+                echo "basic project <project_name>  : Creates a project in the current directory"
+                echo "basic app <app_name>          : Adds an app in the current project"
+                echo "basic auth                    : Sets up the auth module in the current project"
+            fi
         fi
 	fi
 fi
