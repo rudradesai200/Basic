@@ -9,19 +9,19 @@ normal=$(tput sgr0)
 
 if [ $1 == "project" ]
 then
-    $BASIC_DIR/scripts/project.sh
+    $BASIC_DIR/scripts/project.sh $@
 else
 	if [ $1 == "app" ]
 	then
-        $BASIC_DIR/scripts/app.sh
+        $BASIC_DIR/scripts/app.sh $@
     else
         if [ $1 == "auth" ]
         then
-            $BASIC_DIR/scripts/auth.sh
+            $BASIC_DIR/scripts/auth.sh $@
         else
             if [ $1 == "uninstall" ]
             then
-                $BASIC_DIR/uninstall.sh
+                $BASIC_DIR/uninstall.sh $@
             else
                 echo "BASIC : An automated tool for hassle-free Django project setup"
                 echo ""
